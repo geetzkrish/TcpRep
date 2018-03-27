@@ -22,4 +22,10 @@ public class Server
         if((receiveMessage = receiveRead.readLine()) != null)  
         {
            System.out.println("Client: " + receiveMessage);         
-        }          
+        }   
+        sendMessage = keyRead.readLine(); 
+        pwrite.println(sendMessage);             
+        pwrite.flush();
+      }               
+    }                    
+}               
