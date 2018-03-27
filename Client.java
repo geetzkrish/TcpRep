@@ -13,5 +13,12 @@ public class Client
  
      // receiving from server ( receiveRead  object)
      InputStream istream = sock.getInputStream();
+  BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
+System.out.println("Start the chitchat, type and press Enter key");
+ 
+     String receiveMessage, sendMessage;               
+     while(true)
+     {
+}
    }                    
 }    
