@@ -18,7 +18,10 @@ System.out.println("Start the chitchat, type and press Enter key");
  
      String receiveMessage, sendMessage;               
      while(true)
-     {
+     { sendMessage = keyRead.readLine();  // keyboard reading
+        pwrite.println(sendMessage);       // sending to server
+        pwrite.flush();                    // flush the data
+       
 }
    }                    
 }    
