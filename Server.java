@@ -15,4 +15,11 @@ public class Server
       PrintWriter pwrite = new PrintWriter(ostream, true);      
       // receiving from server ( receiveRead  object)
       InputStream istream = sock.getInputStream();
-      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));       
+      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
+      String receiveMessage, sendMessage;               
+      while(true)
+      {
+        if((receiveMessage = receiveRead.readLine()) != null)  
+        {
+           System.out.println("Client: " + receiveMessage);         
+        }          
