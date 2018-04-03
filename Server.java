@@ -17,15 +17,24 @@ public class Server
       InputStream istream = sock.getInputStream();
       BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
       String receiveMessage, sendMessage;               
-      while(true)
+      do
       {
-        if((receiveMessage = receiveRead.readLine()) != null)  
-        {
-           System.out.println("Client: " + receiveMessage);         
-        }   
-        sendMessage = keyRead.readLine(); 
-        pwrite.println(sendMessage);             
-        pwrite.flush();
-      }               
+      		receiveMessage = receiveRead.readLine();
+      		System.out.println("Client: " + receiveMessage); 
+        	if(receiveMessage.equalsIgnoreCase("ok"))  
+        	{
+			System.out.println("Server exiting...");	
+            		System.exit(0);   
+        	}
+        	System.out.print("Server: ");    		
+        	sendMessage = keyRead.readLine(); 
+        	pwrite.println(sendMessage); 
+		if(sendMessage.equalsIgnoreCase("ok"))
+        	{
+            		System.out.println("Server exiting..."); // displaying at prompt
+			System.exit(0);
+        	}
+        	pwrite.flush();
+      } while(true);              
     }                    
 }               
